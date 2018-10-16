@@ -29,7 +29,7 @@ global $webshowcase;
 <header id="header">
 	<div class="container clearfix">
 		<div class="left-box">
-			<a class="green-btn" href="" class="login">CLIENT LOGIN</a>
+			<a class="default-btn green-btn" href="" class="login">CLIENT LOGIN</a>
 		</div>
 		<div class="right-box">
 			<nav class="contact-nav">
@@ -39,16 +39,31 @@ global $webshowcase;
 				</ul>
 			</nav>
 		</div>
-		<nav class="main-nav">
-			<ul>
-				<li><a href="">TRUST ENGINE</a></li>
-				<li><a href="">BLOG</a></li>
-				<li><a href=""></a></li>
-				<li><a href="">BOARD</a></li>
-				<li><a href="">CONTACT</a></li>
-			</ul>
-		</nav>
-		
+		<div class="header-logo-block hidden-desc">
+				<a class="logo" href="/" title="" rel="">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="Logo">
+				</a>
+			</div>
+		<div class="main-nav">
+			<div class="menu-header-left">
+				<ul>
+					<li><a href="">TRUST ENGINE</a></li>
+					<li><a href="">BLOG</a></li>
+				</ul>
+			</div>
+			<div class="header-logo-block hidden-mob">
+				<a class="logo" href="/" title="" rel="">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="Logo">
+				</a>
+			</div>
+			<div class="menu-header-right">
+				<ul>
+					<li><a href="">BOARD</a></li>
+					<li><a href="">CONTACT</a></li>
+				</ul>
+			</div>
+			
+		</div>
 		
 
 	</div>

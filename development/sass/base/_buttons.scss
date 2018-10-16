@@ -1,10 +1,17 @@
-.green-btn{
-	background: $clr_green;
+.default-btn{
 	color: $clr_white;
 	padding: 11px 22px;
-	&:hover{
-		text-decoration: none;
+	background: $clr_blue;
+	&.green-btn{
+		background: $clr_green;
+		&:hover{
 		background: darken( $clr_green, 10% );
 		color: $clr_white;
+	}
+	}
+	&:hover{
+		text-decoration: none;
+		color: $clr_white;
+		background: darken( $clr_blue, 10% );
 	}
 }

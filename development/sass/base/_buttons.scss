@@ -1,0 +1,10 @@
+.green-btn{
+	background: $clr_green;
+	color: $clr_white;
+	padding: 11px 22px;
+	&:hover{
+		text-decoration: none;
+		background: darken( $clr_green, 10% );
+		color: $clr_white;
+	}
+}

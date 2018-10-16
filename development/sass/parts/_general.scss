@@ -1,0 +1,18 @@
+.container{
+	max-width: 1145px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+.clearfix{
+	position: relative;
+	&:before{
+		content: '';
+		clear: both;
+		display: block;
+	}
+	&:after{
+		content: '';
+		clear: both;
+		display: block;
+	}
+}

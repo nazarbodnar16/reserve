@@ -1,0 +1,61 @@
+#header{
+  background: $clr_white;
+  padding: 30px 0;
+  box-shadow: 0 0 16px rgba(18,18,18,0.1);
+  .left-box{
+  	float: left;
+  	.green-btn{
+  		font-size: 14px;
+  		font-weight: 700;
+  		letter-spacing: 1px;
+  		line-height: 40px;
+  	}
+  }
+  .right-box{
+  	float: right;
+
+  }
+  ul{
+  	list-style: none;
+  	margin: 0;
+  	padding: 0;
+  }
+}
+
+.contact-nav{
+	ul{
+		li{
+			display: inline-block;
+			position: relative;
+			a{
+				padding: 6px 15px;
+			}
+			&.phone{
+				a{
+					color: $clr_light_blue;
+				}
+			}
+			+li{
+				border-left: 1px solid #d5d5d5;
+			}
+		}
+	}
+}
+
+
+.main-nav{
+	overflow: hidden;
+	text-align: center;
+	ul{
+		li{
+			display: inline-block;
+			a{
+				font: 700 16px/20px 'Montserrat', sans-serif;
+				&:hover{
+					color: darken( $clr_main, 10% );
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,51 @@
+$clr_main: #151b33;
+$clr_blue: #374366;
+$clr_blue_dark: #151b33;
+$clr_green: #629364;
+$clr_white: #fff;
+$clr_light: #f1f1f0;
+$clr_light_blue: #88a6cb;
+
+
+@mixin sw {
+  display: block;
+  position: relative;
+  width: 32px;
+  height: 3px;
+  background: $clr_white;
+  border: none;
+  border-radius: 4px;
+}
+
+@mixin btn {
+  pointer-events: all;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@mixin parent_size {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin lstn {
+  list-style-type: none;
+  padding: 0;
+}
+
+@mixin tran {
+  transition: all .5s ease;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}

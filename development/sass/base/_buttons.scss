@@ -15,3 +15,12 @@
 		background: darken( $clr_blue, 10% );
 	}
 }
+.default-link{
+	font-size: 14px;
+	font-weight: 700;
+	color: $clr_green;
+	&:hover{
+		text-decoration: none;
+		color: lighten( $clr_green, 10% );
+	}
+}

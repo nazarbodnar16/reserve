@@ -30,4 +30,5 @@ $(document).ready(function () {
   $('.fader').click(function(){
     $('body').removeClass('search-opened');
 });
+  $('.director-list--item .info').matchHeight();
 })

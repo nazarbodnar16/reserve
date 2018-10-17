@@ -88,6 +88,9 @@ a:focus{
 		font-size: 26px;
 		margin-bottom: 35px;
 		color: $clr_white;
+		@media (max-width: 580px){
+			font-size: 18px;
+		}
 	}
 	.text-box{
 		padding: 0 20px;
@@ -135,6 +138,9 @@ a:focus{
 			font-size: 26px;
 			font-weight: 700;
 			color: $clr_main;
+			@media (max-width: 580px){
+				font-size: 18px;
+			}
 		}
 		p{
 			margin-bottom: 20px;
@@ -161,6 +167,9 @@ a:focus{
 			font-weight: 700;
 			color: $clr_gray;
 			float: left;
+			@media (max-width: 580px){
+				float: none;
+			}
 		}
 		.posted-by{
 			font-size: 14px;
@@ -168,6 +177,9 @@ a:focus{
 			color: $clr_gray;
 			float: right;
 			text-transform: uppercase;
+			@media (max-width: 580px){
+				float: none;
+			}
 			span{
 				color: $clr_light_blue;
 				display: inline-block;
@@ -180,12 +192,18 @@ a:focus{
 		background-size: cover;
 		background-repeat: no-repeat;
 		margin-bottom: 35px;
+		@media (max-width: 580px){
+			height: 250px;
+		}
 	}
 	.h2{
 		font-size: 26px;
 		font-weight: 700;
 		color: $clr_main;
 		margin-bottom: 20px;
+		@media (max-width: 768px){
+			font-size: 18px;
+		}
 	}
 	&--text{
 		border-bottom: 1px solid #e1e1e1;
@@ -212,6 +230,9 @@ a:focus{
 		font-weight: 700;
 		color: $clr_light_blue;
 		margin-bottom: 10px;
+		@media (max-width: 580px){
+			font-size: 18px;
+		}
 	}
 	p{
 		margin-bottom: 20px;
@@ -249,6 +270,11 @@ a:focus{
 		float: left;
 		margin: 19px 20px 0 0;
 		text-transform: uppercase;
+		@media (max-width: 580px){
+			float: none;
+			display: block;
+			text-align: center;
+		}
 	}
 }
 
@@ -258,6 +284,13 @@ a:focus{
 	font-size: 16px;
 	&--item{
 		display: inline-block;
+		@media (max-width: 580px){
+			width: 50%;
+			display: block;
+			margin: 0 auto;
+			text-align: center;
+			margin-bottom: 10px;
+		}
 		a{
 			display: block;
 			padding: 9px 17px;
@@ -319,10 +352,26 @@ a:focus{
 		width: 25%;
 		display: inline-block;
 		vertical-align: top;
+		@media (max-width: 1024px){
+			width: 33.333%;
+		}
+		@media (max-width: 991px){
+			width: 50%;
+		}
+		@media (max-width: 768px){
+			width: 100%;
+		}
 		&.mod-big{
 			width: 50%;
+			@media (max-width: 768px){
+				width: 100%;
+			}
 			.director-photo{
 				height: 405px;
+				@media (max-width: 768px){
+					height: 227px;
+					height: 350px;
+				}
 			}
 			.info{
 				padding: 50px 30px 30px;
@@ -339,9 +388,12 @@ a:focus{
 				background-repeat: no-repeat;
 				width: 100%;
 				background-position: 50% 50%;
+				@media (max-width: 768px){
+					height: 350px;
+				}
 			}
 			.info{
-				padding: 27px 20px 45px;
+				padding: 27px 20px 25px;
 				color: $clr_main;
 				font-size: 16px;
 				display: block;
@@ -371,6 +423,70 @@ a:focus{
 				text-decoration: none;
 				box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.3); 
 			}
+		}
+	}
+}
+.director-box{
+	background: $clr_light;
+	padding: 135px 0 100px;
+	.text-container{
+		max-width: 745px;
+	}
+}
+.director{
+	background: $clr_white;
+	box-shadow: 1px 2px 16px 0px rgba(0, 0, 0, 0.1);
+	padding: 215px 40px 35px;
+	@media (max-width: 768px){
+		padding-top: 45px;	
+	}
+	@media (max-width: 580px){
+		padding: 45px 20px 35px;
+	}
+	.director-info{
+		position: relative;
+		padding-bottom: 15px;
+		margin-bottom: 30px;
+		border-bottom: 1px solid #e1e1e1;
+		@media (max-width: 768px){
+			padding-bottom: 0;
+		}
+		.name{
+			font-weight: 700;
+			font-size: 26px;
+			color: $clr_main;
+			margin-bottom: 10px;
+		}
+		.position{
+			font-size: 14px;
+			font-weight: 700;
+			color: $clr_gray;
+			text-transform: uppercase;
+			display: block;
+			@media (max-width: 768px){
+				margin-bottom: 20px;
+			}
+		}
+		.director-photo{
+			position: absolute;
+			bottom: 0;
+			right: -30px;
+			@media (max-width: 768px){
+				position: relative;
+				bottom: auto;
+				right: auto;
+				max-width: 200px;
+			}
+			img{
+				display: block;
+			}
+		}
+	}
+	.director-description{
+		color: $clr_main;
+		font-size: 16px;
+		p{
+			margin-bottom: 30px;
 		}
 	}
 }

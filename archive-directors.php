@@ -4,7 +4,7 @@ get_header(); ?>
 <main>
 	<div class="directors">
 		<div class="container">
-			<h1 class="h1">BLOG</h1>
+			<h1 class="h1">BOARD OF DIRECTORS</h1>
 			<div class="blog-logo bg-img"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="image description"></div>
 			<ul class="director-list">
 				<?php 

@@ -29,7 +29,7 @@ global $webshowcase;
 <header id="header">
 	<div class="container clearfix">
 		<div class="left-box">
-			<a class="default-btn green-btn" href="" class="login">CLIENT LOGIN</a>
+			<a class="default-btn green-btn" href="https://secure.reservetrust.com/Login" class="login">CLIENT LOGIN</a>
 		</div>
 		<div class="right-box">
 			<nav class="contact-nav">

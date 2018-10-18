@@ -1,9 +1,20 @@
 /*
-Theme Name: webshowcase
-Author: the WordPress team
-Author URI: http://ihordu4enko.pp.ua/
-Description: Portfolio Site
+Theme Name: Reserve Trust
+Author: Allianceinteractive dev team
+Author URI: https://www.allianceinteractive.com/
+Description: Company website
 Version: 1.0
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+	.director-photo img{
+		max-width: 390px;
+	} 
+	.wpcf7-validation-errors{
+		color: #fff;
+	}
+	a:focus {
+		text-decoration: none;
+		color: #374366 !important;
+	}

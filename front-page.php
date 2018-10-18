@@ -17,13 +17,13 @@ get_header(); ?>
 <main id="main">
 	<div class="top-baner">
 		<div class="text-container">
-			<h1 class="h1">SECURITY AT SPEED WITH REALITY</h1>
-			<strong>A COLORADO CHARTERED AND REGULATED TRUST COMPANY</strong>
+			<h1 class="h1"><?php echo get_field('hp_top_title'); ?></h1>
+			<strong><?php echo get_field('hp_top_subtitle'); ?></strong>
 			<div class="text-box">
-				<p>Reserve Trust provides independent custody and trust management services along with escrow and a range of other deposit services to, and for the benefit of, public and private companies, public entities, foundations, endowments, families and individuals. Our customers’ interests and goals are our highest priority and they drive our business decisions, strategy, and performance</p>
+				<p><?php echo get_field('hp_top_text'); ?></p>
 			</div>
-			<strong>DO MORE FOR LESS WITH TRUST ENGINE</strong>
-			<a href="#" class="default-btn">LEARN MORE</a>
+			<strong><?php echo get_field('hp_cta_title'); ?></strong>
+			<a href="<?php echo get_field('hp_cta_link'); ?>" class="default-btn">LEARN MORE</a>
 		</div>
 	</div>
 	<div class="partners">

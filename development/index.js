@@ -10,7 +10,7 @@ $(document).ready(function () {
    }
    else {
        $('.contact-nav').appendTo('#header .right-box');
-       $('#header .left-box').prependTo('#header .container');
+       $('#header .left-box').prependTo('#header .header-box');
    }
 });
   

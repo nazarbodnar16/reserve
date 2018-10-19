@@ -9,30 +9,37 @@ get_header(); ?>
 			<h1 class="h1">BLOG</h1>
 			<div class="blog-logo bg-img"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="image description"></div>
 			<ul class="blog-list">
-				<li class="blog-list--item">
-					<span class="time">AUGUST 3, 2018</span>
-					<h2 class="h2">Who is The Reserve Trust Company?</h2>
-					<p>We are a dynamic financial institution created and developed by banking experts.  We represent a new evolution in the delivery of financial services, an innovative banking business model.  We provide escrow-based deposit accounts and serve as a trust intermediary to our business clients to streamline their payment processes, create certainty and reduce risk, while enhancing reconciliation, and allowing our clients to grow their customer base.</p>
-					<a class="default-link" href="">LEARN MORE</a>
-				</li>
-				<li class="blog-list--item">
-					<span class="time">AUGUST 3, 2018</span>
-					<h2 class="h2">Who is The Reserve Trust Company provide escrow-based deposit accounts and serve?</h2>
-					<p>We are a dynamic financial institution created and developed by banking experts.  We represent a new evolution in the delivery of financial services, an innovative banking business model.  We provide escrow-based deposit accounts and serve as a trust intermediary to our business clients to streamline their payment processes, create certainty and reduce risk, while enhancing reconciliation, and allowing our clients to grow their customer base.</p>
-					<a class="default-link" href="">LEARN MORE</a>
-				</li>
-				<li class="blog-list--item">
-					<span class="time">AUGUST 3, 2018</span>
-					<h2 class="h2">Who is The Reserve Trust Company?</h2>
-					<p>We are a dynamic financial institution created and developed by banking experts.  We represent a new evolution in the delivery of financial services, an innovative banking business model.  We provide escrow-based deposit accounts and serve as a trust intermediary to our business clients to streamline their payment processes, create certainty and reduce risk, while enhancing reconciliation, and allowing our clients to grow their customer base.</p>
-					<a class="default-link" href="">LEARN MORE</a>
-				</li>
-				<li class="blog-list--item">
-					<span class="time">AUGUST 3, 2018</span>
-					<h2 class="h2">The Reserve Trust Company provide escrow-based deposit accounts and serve?</h2>
-					<p>We are a dynamic financial institution created and developed by banking experts.  We represent a new evolution in the delivery of financial services, an innovative banking business model.  We provide escrow-based deposit accounts and serve as a trust intermediary to our business clients to streamline their payment processes, create certainty and reduce risk, while enhancing reconciliation, and allowing our clients to grow their customer base.</p>
-					<a class="default-link" href="">LEARN MORE</a>
-				</li>
+
+				<?php 
+
+				// Query arguments
+				$args = array(
+					'post_type' => 'post',
+					'posts_per_page' => -1,
+					'order' => 'DESC'
+				);
+
+				$query = new WP_Query( $args );
+
+				if ( $query->have_posts() ) {
+					while ( $query->have_posts() ) { $query->the_post(); ?>
+						<?php get_the_title(); ?>
+								<li class="blog-list--item">
+									<span class="time"><?php echo get_the_date('F j, Y'); ?></span>
+									<h2 class="h2"><?php echo get_the_title(); ?></h2>
+									<p><?php the_excerpt(); ?></p>
+									<a class="default-link" href="<?php echo get_permalink(); ?>">LEARN MORE</a>
+								</li>
+
+				<?php	}
+				} else {
+					// IF nothing was found
+				}
+				/* Query reset arguments */
+				wp_reset_postdata();
+
+				 ?>
+
 			</ul>
 		</div>
 	</div>

@@ -10,10 +10,10 @@ if ( function_exists( 'add_theme_support' ) ) {
 }
 
 //register menus
-register_nav_menus(array(
-    'main_menu' => 'Main menu',
-    'foot_menu' => 'Footer menu'
-));
+register_nav_menus( array(
+	'menu_left'  => 'Menu header left',
+	'menu_right' => 'Menu header right'
+) );
 
 add_theme_support( 'post-formats', array(
 	'aside',
@@ -60,7 +60,85 @@ function my_assets() {
 	wp_enqueue_script( 'id-custom-script', get_template_directory_uri() . '/scripts/index.min.js', array(), '1.0.0', true );
 
 }
+
 add_action( 'wp_enqueue_scripts', 'my_assets' );
 
 //Allow post thumbnails
 add_theme_support( 'post-thumbnails' );
+
+// Cusctom post type Direcrors
+
+//====================================================================================================================
+//===============================================PRODUCTS CUSTOM POST TYPE========================================
+//====================================================================================================================
+
+function add_directors_posts() {
+	register_post_type(
+		'directors',
+		array(
+			'labels'       => array(
+				'name'               => 'Directors',
+				'singular_name'      => 'Director item',
+				'add_new'            => 'Add new',
+				'add_new_item'       => 'Add new item',
+				'edit'               => 'Edit',
+				'edit_item'          => 'Edit item',
+				'new_item'           => 'New item',
+				'view'               => 'View',
+				'view_item'          => 'View item',
+				'search_items'       => 'Search item',
+				'not_found'          => 'Not found',
+				'not_found_in_trash' => 'Not find in trash',
+			),
+			'public'       => true,
+			'hierarchical' => true,
+			'has_archive'  => true,
+			'menu_icon'    => 'dashicons-businessman',
+			'supports'     => array(
+				'title',
+				'editor',
+				'thumbnail',
+				//'post-formats',
+				'excerpt',
+				'directors_category'
+			),
+			'can_export'   => true,
+		)
+	);
+}
+
+add_action( 'init', 'add_directors_posts' );
+
+// function my_taxonomies_direcrors_artical() {
+//     $labels = array(
+//         'name'              => _x( 'Category directors', 'taxonomy general name' ),
+//         'singular_name'     => _x( 'Singular name', 'taxonomy singular name' ),
+//         'search_items'      => __( 'Search items' ),
+//         'all_items'         => __( 'All item' ),
+//         'parent_item'       => __( 'Parent item' ),
+//         'parent_item_colon' => __( 'Parent item colon' ),
+//         'edit_item'         => __( 'Edit item' ), 
+//         'update_item'       => __( 'Update item' ),
+//         'add_new_item'      => __( 'Add new item' ),
+//         'new_item_name'     => __( 'New item name' ),
+//         'menu_name'         => __( 'Directors Category' ),
+//     );
+//     $args = array(
+//         'labels' => $labels,
+//         'hierarchical' => true,
+//         'show_ui'           => true,
+//         'show_admin_column' => true
+//     );
+//     register_taxonomy( 'directors_category', 'directors', $args );
+// }
+// add_action( 'init', 'my_taxonomies_direcrors_artical', 0 );
+
+function wpb_move_comment_field_to_bottom( $fields ) {
+	$comment_field = $fields['comment'];
+	unset( $fields['comment'] );
+	$fields['comment'] = $comment_field;
+
+	return $fields;
+}
+
+add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom' );

@@ -10,10 +10,10 @@ if ( function_exists( 'add_theme_support' ) ) {
 }
 
 //register menus
-register_nav_menus(array(
-    'menu_left' => 'Menu header left',
-    'menu_right' => 'Menu header right'
-));
+register_nav_menus( array(
+	'menu_left'  => 'Menu header left',
+	'menu_right' => 'Menu header right'
+) );
 
 add_theme_support( 'post-formats', array(
 	'aside',
@@ -60,6 +60,7 @@ function my_assets() {
 	wp_enqueue_script( 'id-custom-script', get_template_directory_uri() . '/scripts/index.min.js', array(), '1.0.0', true );
 
 }
+
 add_action( 'wp_enqueue_scripts', 'my_assets' );
 
 //Allow post thumbnails
@@ -71,41 +72,42 @@ add_theme_support( 'post-thumbnails' );
 //===============================================PRODUCTS CUSTOM POST TYPE========================================
 //====================================================================================================================
 
-function add_directors_posts(){
-    register_post_type(
-                    'directors',
-                    array(
-                        'labels'        => array(
-                                                'name'                  => 'Directors',
-                                                'singular_name'         => 'Director item',
-                                                'add_new'               => 'Add new',
-                                                'add_new_item'          => 'Add new item',
-                                                'edit'                  => 'Edit',
-                                                'edit_item'             => 'Edit item',
-                                                'new_item'              => 'New item',
-                                                'view'                  => 'View',
-                                                'view_item'             => 'View item',
-                                                'search_items'          => 'Search item',
-                                                'not_found'             => 'Not found',
-                                                'not_found_in_trash'    => 'Not find in trash',
-                                        ),
-                        'public'        => true,
-                        'hierarchical'  => true, 
-                        'has_archive'   => true,
-                        'menu_icon'    => 'dashicons-businessman',
-                        'supports'      => array(
-                                                'title',
-                                                'editor',
-                                                'thumbnail',
-                                                //'post-formats',
-                                                'excerpt',
-                                                'directors_category'
-                                            ),
-                        'can_export' => true,
-                    )
-    );
+function add_directors_posts() {
+	register_post_type(
+		'directors',
+		array(
+			'labels'       => array(
+				'name'               => 'Directors',
+				'singular_name'      => 'Director item',
+				'add_new'            => 'Add new',
+				'add_new_item'       => 'Add new item',
+				'edit'               => 'Edit',
+				'edit_item'          => 'Edit item',
+				'new_item'           => 'New item',
+				'view'               => 'View',
+				'view_item'          => 'View item',
+				'search_items'       => 'Search item',
+				'not_found'          => 'Not found',
+				'not_found_in_trash' => 'Not find in trash',
+			),
+			'public'       => true,
+			'hierarchical' => true,
+			'has_archive'  => true,
+			'menu_icon'    => 'dashicons-businessman',
+			'supports'     => array(
+				'title',
+				'editor',
+				'thumbnail',
+				//'post-formats',
+				'excerpt',
+				'directors_category'
+			),
+			'can_export'   => true,
+		)
+	);
 }
-add_action('init','add_directors_posts');
+
+add_action( 'init', 'add_directors_posts' );
 
 // function my_taxonomies_direcrors_artical() {
 //     $labels = array(
@@ -130,3 +132,13 @@ add_action('init','add_directors_posts');
 //     register_taxonomy( 'directors_category', 'directors', $args );
 // }
 // add_action( 'init', 'my_taxonomies_direcrors_artical', 0 );
+
+function wpb_move_comment_field_to_bottom( $fields ) {
+	$comment_field = $fields['comment'];
+	unset( $fields['comment'] );
+	$fields['comment'] = $comment_field;
+
+	return $fields;
+}
+
+add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom' );

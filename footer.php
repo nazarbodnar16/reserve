@@ -57,5 +57,8 @@ else { ?>
 	    });
 	});
 </script>
+<?php if(is_singular()) { ?>
+  <script>sbg();</script>
+<?php } ?>
 </body>
 </html>

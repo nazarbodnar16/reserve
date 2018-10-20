@@ -387,7 +387,8 @@ a:focus{
 				background-size: cover;
 				background-repeat: no-repeat;
 				width: 100%;
-				background-position: 50% 50%;
+				background-position: 50% 0;
+				border: 1px solid $clr_white;
 				@media (max-width: 768px){
 					height: 350px;
 				}

@@ -15,7 +15,7 @@ global $webshowcase;
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title><?php echo get_bloginfo( 'name' ); ?> | Web Developer</title>
+	<title><?php echo get_bloginfo( 'name' ); ?> | Reserve Trust</title>
 	<meta name="description" content="<?php get_bloginfo( 'description' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -28,44 +28,37 @@ global $webshowcase;
 </head>
 <header id="header">
 	<div class="container clearfix">
-		<div class="left-box">
-			<a class="default-btn green-btn" href="" class="login">CLIENT LOGIN</a>
-		</div>
-		<div class="right-box">
-			<nav class="contact-nav">
-				<ul>
-					<li class="phone"><a href=""><i class="fas fa-envelope"></i></a></li>
-					<li class="mail"><a href=""><i class="fas fa-phone"></i></a></li>
-				</ul>
-			</nav>
-		</div>
-		<div class="header-logo-block hidden-desc">
-				<a class="logo" href="/" title="" rel="">
+		<div class="header-box">
+			<div class="left-box">
+				<a class="default-btn green-btn" href="https://secure.reservetrust.com/Login" class="login">CLIENT LOGIN</a>
+			</div>
+			<div class="main-nav">
+				<div class="menu-header-left">
+					<?php wp_nav_menu(array('container' => false, 'items_wrap' => '<ul id="%1$s">%3$s</ul>', 'theme_location'  => 'menu_left')); ?>
+				</div>
+				<div class="header-logo-block hidden-mob">
+					<a class="logo" href="/" title="" rel="">
+						<img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="Logo">
+					</a>
+				</div>
+				<div class="menu-header-right">
+					<?php wp_nav_menu(array('container' => false, 'items_wrap' => '<ul id="%1$s">%3$s</ul>', 'theme_location'  => 'menu_right')); ?>
+				</div>
+			</div>
+			<div class="right-box">
+				<nav class="contact-nav">
+					<ul>
+						<li class="phone"><a href="mailto:info@reservetrust.com"><i class="fas fa-envelope"></i></a></li>
+						<li class="mail"><a href="tel:720-306-8170"><i class="fas fa-phone"></i></a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="header-logo-block hidden-desc">
+				<a class="logo" href="<?php echo get_home_url(); ?>" title="" rel="">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="Logo">
 				</a>
 			</div>
-		<div class="main-nav">
-			<div class="menu-header-left">
-				<ul>
-					<li><a href="">TRUST ENGINE</a></li>
-					<li><a href="">BLOG</a></li>
-				</ul>
-			</div>
-			<div class="header-logo-block hidden-mob">
-				<a class="logo" href="/" title="" rel="">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="Logo">
-				</a>
-			</div>
-			<div class="menu-header-right">
-				<ul>
-					<li><a href="">BOARD</a></li>
-					<li><a href="">CONTACT</a></li>
-				</ul>
-			</div>
-			
 		</div>
-		
-
 	</div>
 </header>
 <body <?php body_class( $class ); ?>>

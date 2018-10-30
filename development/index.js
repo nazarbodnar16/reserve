@@ -10,7 +10,7 @@ $(document).ready(function () {
    }
    else {
        $('.contact-nav').appendTo('#header .right-box');
-       $('#header .left-box').prependTo('#header .container');
+       $('#header .left-box').prependTo('#header .header-box');
    }
 });
   
@@ -31,4 +31,5 @@ $(document).ready(function () {
     $('body').removeClass('search-opened');
 });
   $('.director-list--item .info').matchHeight();
+  $('.lidership-list--item .top-info').matchHeight();
 })

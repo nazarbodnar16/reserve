@@ -40,11 +40,11 @@ get_header(); ?>
 				// check if the repeater field has rows of data
 				if( have_rows('partners_logo') ):
 				 	// loop through the rows of data
-				    while ( have_rows('partners_logo') ) : the_row(); ?>
+					while ( have_rows('partners_logo') ) : the_row(); ?>
 
 						<li class="li partners-list--item"><img src="<?php the_sub_field('logo'); ?>" alt="Partners logo"></li>
-						  
-				<?  endwhile;
+
+					<?  endwhile;
 
 				else :
 				    // no rows found
@@ -65,23 +65,61 @@ get_header(); ?>
 
 				<?php
 					// check if the repeater field has rows of data
-					if( have_rows('standards_list') ):
+				if( have_rows('standards_list') ):
 					 	// loop through the rows of data
-					    while ( have_rows('standards_list') ) : the_row(); ?>
+					while ( have_rows('standards_list') ) : the_row(); ?>
 
-							<li class="standarts-list--item">
-								<div class="img">
-									<img src="<?php the_sub_field('icon'); ?>" alt="icon">
-								</div>
-								<h3 class="h3"><?php the_sub_field('subtitle'); ?></h3>
-								<p><?php the_sub_field('description'); ?></p>
-							</li>
+						<li class="standarts-list--item">
+							<div class="img">
+								<img src="<?php the_sub_field('icon'); ?>" alt="icon">
+							</div>
+							<h3 class="h3"><?php the_sub_field('subtitle'); ?></h3>
+							<p><?php the_sub_field('description'); ?></p>
+						</li>
 
 					<?  endwhile;
 
-					else :
+				else :
 					    // no rows found
-					endif;
+				endif;
+				?>
+
+			</ul>
+		</div>
+	</div>
+	<div class="lidership">
+		<div class="container">
+			<div class="heading">
+				<h2 class="h2"><?php echo get_field('leadership_section_title'); ?></h2>
+				<strong><?php echo get_field('leadership_section_subtitle'); ?></strong>
+			</div>
+			<ul class="lidership-list">
+
+				<?php
+				// check if the repeater field has rows of data
+				if( have_rows('leadership_items') ):
+				 	// loop through the rows of data
+				    while ( have_rows('leadership_items') ) : the_row(); ?>      
+				        
+				        		<li class="li lidership-list--item">
+									<div class="img bg-img">
+										<img src="<?php the_sub_field('image'); ?>" alt="<?php the_sub_field('person'); ?>">
+									</div>
+									<div class="lidership-list-descr">
+										<div class="top-info">
+											<h3><?php the_sub_field('person'); ?></h3>
+											<span class="position"><?php the_sub_field('position'); ?></span>
+										</div>
+										<div class="lidership-list-info">
+											<p><?php the_sub_field('description'); ?></p>
+										</div>
+									</div>
+								</li>
+
+				<?php endwhile;
+				else :
+				    // no rows found
+				endif;
 				?>
 
 			</ul>

@@ -1,7 +1,7 @@
 <footer id="footer" class="main-footer">
 
-	<?php
-if( is_front_page() ){ ?>
+<!-- 	<?php
+// if( is_front_page() ){ ?>
 	<div class="bottom-footer clearfix">
 		<div class="container">
 			<span class="copy">
@@ -9,8 +9,8 @@ if( is_front_page() ){ ?>
 			</span>
 		</div>
 	</div>
-<?php }
-else { ?>
+<?php // }
+//else { ?> -->
 <div class="footer-logo bg-img"><img src="<?php echo get_template_directory_uri(); ?>/images/footer-logo.png" alt="image description"></div>
 	<div class="top-footer">
 		<div class="container">
@@ -19,8 +19,8 @@ else { ?>
 				<?php echo do_shortcode('[contact-form-7 id="120" title="Contact form"]'); ?>
 			</div>
 			<a href="/privacy-policy" class="policy">PRIVACY POLICY</a>
-			<p class="first-address">1601 Arapahoe Street, Suite 1100, Denver, CO 720-306-8170</p>
-			<p class="second-address">1717 Pennsylvania Avenue, N.W. Suite 900, Washington, DC 202-552-0175</p>
+			<p class="first-address">5600 South Quebec Street, Suite 205D, Greenwood Village, CO 80111</p>
+			<p class="second-address">20006 Pennsylvania Avenue, N.W. Suite 900, Washington</p>
 		</div>
 	</div>
 	<div class="bottom-footer clearfix">
@@ -30,9 +30,9 @@ else { ?>
 			</span>
 		</div>
 	</div>
-<?php }
+<!-- <?php //}
 
-?>
+?> -->
 	
 
 </footer>

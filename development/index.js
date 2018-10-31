@@ -31,4 +31,5 @@ $(document).ready(function () {
     $('body').removeClass('search-opened');
 });
   $('.director-list--item .info').matchHeight();
+  $('.lidership-list--item .top-info').matchHeight();
 })

@@ -83,3 +83,12 @@ a:focus {
 .secure-list--item{
 	padding: 0px 40px !important;
 }
+li.partners-list--item{
+	padding: 0 25px;
+}
+.secure-list--item .detail{
+	text-align: center !important;
+}
+.policy{
+	color: #89a6ca;
+}

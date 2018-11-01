@@ -17,27 +17,27 @@
 								<?php the_content(); ?>
               </div>
 
-              <div class="submit-box">
+<!--               <div class="submit-box">
                 <div class="submit-form">
                   <h3 class="h3">Submit a Comment</h3>
                   <p>Your email address will not be published.</p>
-	                <?php comments_template(); ?>
+	                <?php // comments_template(); ?>
                 </div>
-              </div>
+              </div> -->
 
 							<?php
-							$id      = $post->ID;
-							$author  = get_bloginfo( 'name' );
-							$url     = get_the_permalink( $id );
-							$title   = get_the_title( $id );
-							$excerpt = get_the_excerpt( $id );
-							$image   = get_template_directory_uri() . "/images/logo.jpg";
-							if ( has_post_thumbnail( $id ) ) {
-								$image_obj = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'full' );
-								$image     = $image_obj[0];
-							} else {
-								$image = get_template_directory_uri() . "/images/logo.jpg";
-							} ?>
+							// $id      = $post->ID;
+							// $author  = get_bloginfo( 'name' );
+							// $url     = get_the_permalink( $id );
+							// $title   = get_the_title( $id );
+							// $excerpt = get_the_excerpt( $id );
+							// $image   = get_template_directory_uri() . "/images/logo.jpg";
+							// if ( has_post_thumbnail( $id ) ) {
+							// 	$image_obj = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'full' );
+							// 	$image     = $image_obj[0];
+							// } else {
+							// 	$image = get_template_directory_uri() . "/images/logo.jpg";
+							//} ?>
 
               <div class="share clearfix">
                 <span>share</span>

@@ -92,3 +92,15 @@ li.partners-list--item{
 .policy{
 	color: #89a6ca;
 }
+.secure-list--item{
+	width: 25%;
+}
+.secure-list{
+	margin:0 !important;
+}
+.payments-list--item{
+	width: 25%;
+}
+.payments-list{
+	padding: 0 !important;
+}

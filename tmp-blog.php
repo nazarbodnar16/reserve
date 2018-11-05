@@ -6,8 +6,8 @@ get_header(); ?>
 <main>
 	<div class="blog-holder">
 		<div class="text-container">
-			<h1 class="h1">BLOG</h1>
-			<div class="blog-logo bg-img"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="image description"></div>
+			<h1 class="h1" style="margin-bottom: 45px;">BLOG</h1>
+			<!-- <div class="blog-logo bg-img"><img src="<?php //echo get_template_directory_uri(); ?>/images/logo.jpg" alt="image description"></div> -->
 			<ul class="blog-list">
 
 				<?php 

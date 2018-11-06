@@ -580,6 +580,12 @@ a:focus{
 	}
 	.engine-video{
 		margin: 0 auto 20px;
+		background: url('../development/images/video.gif');
+		background-size: cover;
+		height: 450px;
+		background-position: left;
+		width: 100%;
+		background-repeat: no-repeat;
 		@media (max-width: 767px){
 			max-width: 400px;
 			margin: 0 auto;

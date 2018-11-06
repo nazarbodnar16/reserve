@@ -8,7 +8,7 @@ get_header(); ?>
 		<div class="container">
 			<h1 class="h1">TRUST ENGINE™</h1>
 			<div class="engine-video">
-				<video autoplay loop src="<?php echo get_field('add_video'); ?>"></video>
+				<!-- <video autoplay loop src="<?php echo get_field('add_video'); ?>"></video> -->
 			</div>
 			<div class="trust-description">
 				<p><?php echo get_field('text_under_video'); ?></p>

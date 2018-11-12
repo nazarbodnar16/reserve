@@ -16,6 +16,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 a:focus {
 	text-decoration: none;
+	color: #374366 !important;
 }
 .wpcf7-mail-sent-ok {
     color: #fff;
@@ -119,4 +120,7 @@ li.partners-list--item{
 }
 .leadership-section__home .director-list--item a .info .descr{
 	-webkit-line-clamp: 2;
+}
+ul.sub-menu a {
+    text-transform: uppercase;
 }

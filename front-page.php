@@ -93,35 +93,37 @@ get_header(); ?>
 				<h2 class="h2"><?php echo get_field('leadership_section_title'); ?></h2>
 				<strong><?php echo get_field('leadership_section_subtitle'); ?></strong>
 			</div>
-			<ul class="lidership-list">
 
-				<?php
-				// check if the repeater field has rows of data
-				if( have_rows('leadership_items') ):
-				 	// loop through the rows of data
-				    while ( have_rows('leadership_items') ) : the_row(); ?>      
-				        
-				        		<li class="li lidership-list--item">
-									<div class="img bg-img">
-										<img src="<?php the_sub_field('image'); ?>" alt="<?php the_sub_field('person'); ?>">
-									</div>
-									<div class="lidership-list-descr">
-										<div class="top-info">
-											<h3><?php the_sub_field('person'); ?></h3>
-											<span class="position"><?php the_sub_field('position'); ?></span>
-										</div>
-										<div class="lidership-list-info">
-											<p><?php the_sub_field('description'); ?></p>
-										</div>
-									</div>
-								</li>
+			<ul class="director-list leadership-section__home">
+				<?php 
 
-				<?php endwhile;
-				else :
-				    // no rows found
-				endif;
-				?>
+				$posts = get_field('leadership_team', 'cpt_leadership');
 
+				if( $posts ): ?>
+
+				    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+				        <?php setup_postdata($post); ?>
+
+							<li class="director-list--item">
+								<a href="<?php echo get_permalink(); ?>">
+									<span class="director-photo bg-img">
+										<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+									</span>
+									<span class="info">
+										<h3 class="h3"><?php the_title(); ?></h3>
+										<span class="position"><?php echo get_field('di_position'); ?></span>
+										<span class="descr">
+											<p><?php the_excerpt(); ?></p>
+										</span>
+									</span>
+								</a>
+							</li>
+
+
+				    <?php endforeach; ?>
+				  
+				    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+				<?php endif; ?>
 			</ul>
 		</div>
 	</div>	

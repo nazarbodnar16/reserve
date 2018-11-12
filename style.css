@@ -104,3 +104,20 @@ li.partners-list--item{
 .payments-list{
 	padding: 0 !important;
 }
+.director-list.leadership-section__home{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.leadership-section__home .director-list--item a .info .descr{
+	-webkit-line-clamp: 2;
+}

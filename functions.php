@@ -66,10 +66,8 @@ add_action( 'wp_enqueue_scripts', 'my_assets' );
 //Allow post thumbnails
 add_theme_support( 'post-thumbnails' );
 
-// Cusctom post type Direcrors
-
 //====================================================================================================================
-//===============================================PRODUCTS CUSTOM POST TYPE========================================
+//===============================================DIRECTORS CUSTOM POST TYPE===========================================
 //====================================================================================================================
 
 function add_directors_posts() {
@@ -132,6 +130,47 @@ add_action( 'init', 'add_directors_posts' );
 //     register_taxonomy( 'directors_category', 'directors', $args );
 // }
 // add_action( 'init', 'my_taxonomies_direcrors_artical', 0 );
+
+//====================================================================================================================
+//===============================================LEADERSHIP CUSTOM POST TYPE===========================================
+//====================================================================================================================
+
+function add_leadership_posts() {
+	register_post_type(
+		'leadership',
+		array(
+			'labels'       => array(
+				'name'               => 'Leadership',
+				'singular_name'      => 'Leadership item',
+				'add_new'            => 'Add new',
+				'add_new_item'       => 'Add new item',
+				'edit'               => 'Edit',
+				'edit_item'          => 'Edit item',
+				'new_item'           => 'New item',
+				'view'               => 'View',
+				'view_item'          => 'View item',
+				'search_items'       => 'Search item',
+				'not_found'          => 'Not found',
+				'not_found_in_trash' => 'Not find in trash',
+			),
+			'public'       => true,
+			'hierarchical' => true,
+			'has_archive'  => true,
+			'menu_icon'    => 'dashicons-groups',
+			'supports'     => array(
+				'title',
+				'editor',
+				'thumbnail',
+				//'post-formats',
+				'excerpt',
+				'leadership_category'
+			),
+			'can_export'   => true,
+		)
+	);
+}
+
+add_action( 'init', 'add_leadership_posts' );
 
 function wpb_move_comment_field_to_bottom( $fields ) {
 	$comment_field = $fields['comment'];
